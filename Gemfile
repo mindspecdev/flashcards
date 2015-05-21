@@ -43,3 +43,5 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'quiet_assets', :group => :development
+
