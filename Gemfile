@@ -47,3 +47,5 @@ end
 
 gem 'simple_form'
 
+gem 'nokogiri'
+
