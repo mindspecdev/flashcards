@@ -1,15 +1,13 @@
 require 'open-uri'
 
-puts 'CREATING Cards'
+puts 'CREATING CARDS'
 
 Card.delete_all
 
-user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.854.0 Safari/535.2"
+url = "http://www.languagedaily.com/learn-german/vocabulary/common-german-words"
 
-html = "http://www.languagedaily.com/learn-german/vocabulary/common-german-words"
-
-@doc = Nokogiri::HTML(open(html, 'User-Agent' => user_agent), nil, "UTF-8")
-@doc.css('div.jsn-article-content table tbody tr').each_with_index { |word, index|
+doc = Nokogiri::HTML(open(url))
+doc.css('div.jsn-article-content table tbody tr').each  { |word|
   original_text = word.css('td.bigLetter')
   translated_text = word.css('td')[2]  
   if original_text
