@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-md-12">
+    <%= simple_form_for(card, html: { class: 'form-horizontal' }) do |f| %>
+      <%= card.original_text %>
+      <%= f.input :translated_text, :as => :hidden %>
+      <%= f.input :entered_translated_text, label: "Enter translation:" %>
+      <%= f.button :submit, 'Проверить' %>
+    <% end %> 
+  </div>
+</div>

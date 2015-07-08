@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   resources :cards
 
+  resource :review, only: [:edit, :update]
+
 end
